@@ -34,22 +34,36 @@ const PasswordGenerator = useCallback(()=>{
     </div>
      <div className='flex text-sm gap-x-2'>
           <div className='flex items-center gap-x-1'>
-           <input
-           type="range"
-           min={6}
-           max={100}
-           value={length}
-           className="cursor-pointer "
-           onChange={(e)=>(setLength(e.target.value))}
+          <input
+                  type="range"
+                  min={6}
+                  max={100}
+                  value={length}
+                  className="cursor-pointer "
+                  onChange={(e)=>(setLength(e.target.value))}
            />
-           <label>Length: {length}</label>
+                   <label>Length: {length}</label>
           </div>
-          <div className="flex items-center gap-x-1">
 
-          </div>
            <div className="flex items-center gap-x-1">
-            
+             <input
+                 type="checkbox"
+                 defaultChecked={CharAllowed}
+                 id="CharacterInput"
+                 onChange={setCharAllowed((prev)=>(!prev))}
+            />
+                 <label htmlFor="CharacterInput">Character</label>
            </div>
+
+           <div className="flex items-center gap-x-1">
+          <input
+                type="checkbox"
+                defaultChecked={numberAllowed}
+                id="NumberInput"
+                onChange={setNumberAllowed((prev)=>(!prev))}
+          />
+                <label htmlFor="NumberInput">Number</label>
+            </div>
      </div>
    </div>
     </>
